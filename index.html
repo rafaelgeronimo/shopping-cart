@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Project: Shopping Cart | Rafael Gerônimo T9</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="loading">Loading...</div>
+    <header class="search">
+      <img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.12.1/mercadolibre/logo-pt__large_plus.png" alt="">
+      <div class="search-container">
+        <input type="text" placeholder="Buscar produtos, marcas e muito mais..." class="search-box">
+        <!-- <input type="submit" value="oi" class="search-button"> -->
+        <button class="search-button"><i class="fas fa-search"></i></button>
+      </div>
+    </header>
+    <section class="container">
+      <section class="items"></section>
+      <section class="cart">
+        <span class="cart__title">Carrinho de compras</span>
+        <button class="empty-cart">Esvaziar carrinho</button>
+        <div class="price-box">Preço total: $<span class="total-price">0</span></div>
+        <ol class="cart__items"></ol>
+      </section>
+    </section>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
