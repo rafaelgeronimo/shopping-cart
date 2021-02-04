@@ -110,7 +110,7 @@ function saveListOnStorage() {
     section.appendChild(createCustomElement('span', 'item__sku', sku));
     section.appendChild(createCustomElement('span', 'item__title', name));
     section.appendChild(createProductImageElement(image));
-    section.appendChild(createCustomElement('button', 'item__add', 'Adicionar ao carrinho!', sku, 'Adicionar ao Carrinho<i class="fas fa-cart-plus"></i>'));
+    section.appendChild(createCustomElement('button', 'item__add', 'Adicionar ao carrinho!', sku, '<i class="fas fa-cart-plus"></i> Adicionar ao Carrinho'));
     return section;
   }
   
@@ -132,10 +132,24 @@ function saveListOnStorage() {
   
   const setupEvents = () => {
     fetchItems('computador');
-  };
+};
+  
   
   window.onload = function onload() {
+
+    const loadingMessage = createCustomElement('div', 'loading', 'Loading...');
+    const searchButton = document.querySelector('.search-button');
+    const searchItem = document.querySelector('.search-box');
+    function showLoadingMessage() {document.querySelector('.items').appendChild(loadingMessage)};
+    searchButton.addEventListener('click', () => {
+        document.querySelector('.items').innerHTML = '';
+        showLoadingMessage();
+        fetchItems(searchItem.value);
+        searchItem.value = '';
+    })
+
     setupEvents();
+    showLoadingMessage();
     refreshTotalPrice();
     restoreCart();
     emptyCart();
